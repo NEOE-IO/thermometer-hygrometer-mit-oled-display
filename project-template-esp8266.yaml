@@ -1,6 +1,6 @@
 # These substitutions allow the end user to override certain values
 substitutions:
-  name: "project-template"
+  name: "thermometer-hygrometer"
 
 esphome:
   name: "${name}"
@@ -11,7 +11,7 @@ esphome:
   # This will allow for (future) project identification,
   # configuration and updates.
   project:
-    name: esphome.project-template
+    name: neoe.thermometer-hygrometer
     version: "1.0"
 
 esp8266:
@@ -50,3 +50,45 @@ captive_portal:
 # Sets up the improv via serial client for Wi-Fi provisioning.
 # Handy if your device has a usb port for the user to add credentials when they first get it.
 improv_serial:
+
+# NEOE specific additions
+i2c:
+
+sensor:
+  - platform: hdc1080
+    temperature:
+      id: temperature
+      name: "Temperatur"
+      accuracy_decimals: 1
+      filters:
+      - sliding_window_moving_average:
+        window_size: 60
+        send_every: 60
+    humidity:
+      id: humidity
+      name: "Luftfeuchtigkeit"
+      accuracy_decimals: 1
+      filters:
+      - sliding_window_moving_average:
+        window_size: 60
+        send_every: 60
+    update_interval: 1s
+
+font:
+  - file: 'OpenSans-Regular.ttf'
+    id: font1
+    size: 12
+  - file: 'OpenSans-Regular.ttf'
+    id: font2
+    size: 36
+
+display:
+  - platform: ssd1306_i2c
+    model: "SH1106 128x64"
+    lambda: |-
+      if (id(temperature).has_state()) {
+        it.printf(64, 0, id(font2), TextAlign::TOP_CENTER, "%.1f °C", id(temperature).state);
+      }
+      if (id(humidity).has_state()) {
+        it.printf(64, 64, id(font1), TextAlign::BOTTOM_CENTER, "Luftfeuchtigkeit: %.0f %%", id(humidity).state);
+      }
