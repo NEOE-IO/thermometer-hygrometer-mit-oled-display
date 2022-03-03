@@ -1,10 +1,16 @@
-# About
+# Über
 
-Add some information about your project here.
+Dieser Bausatz ermöglicht die Überwachung von Temperatur und Luftfeuchtigkeit mittels des digitalen Sensors HDC1080. 
+
+Die ermittelten Messwerte (Temperatur, Luftfeuchtigkeit) werden direkt über ein 1,3 Zoll OLED-Display ausgegeben.
+
+Die Integration mit dem Smarthome-System erfolgt via ESPHome. 
+
+Weitere Informationen siehe: <a href="https://www.neoe.io">www.neoe.io</a>
 
 # Installation
 
-You can use the button below to install the pre-built firmware directly to your device via USB from the browser.
+Über die folgende Schaltfläche kann die bereits vorbereitete Firmware einfach über USB aus dem Browser installiert werden.
 
 <esp-web-install-button manifest="./manifest.json"></esp-web-install-button>
 
