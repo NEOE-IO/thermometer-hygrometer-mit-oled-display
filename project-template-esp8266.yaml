@@ -51,6 +51,7 @@ captive_portal:
 # Handy if your device has a usb port for the user to add credentials when they first get it.
 improv_serial:
 
+
 # NEOE specific additions
 i2c:
 
