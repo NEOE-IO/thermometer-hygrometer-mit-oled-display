@@ -1,12 +1,6 @@
 # Über
 
-Dieser Bausatz ermöglicht die Überwachung von Temperatur und Luftfeuchtigkeit mittels des digitalen Sensors HDC1080. 
-
-Die ermittelten Messwerte (Temperatur, Luftfeuchtigkeit) werden direkt über ein 1,3 Zoll OLED-Display ausgegeben.
-
-Die Integration mit dem Smarthome-System erfolgt via ESPHome. 
-
-Weitere Informationen siehe: <a href="https://www.neoe.io">www.neoe.io</a>
+Dieser Bausatz ermöglicht die Überwachung von Temperatur und Luftfeuchtigkeit mittels des digitalen Sensors HDC1080. Die ermittelten Messwerte (Temperatur, Luftfeuchtigkeit) werden direkt über ein 1,3 Zoll OLED-Display ausgegeben. Die Integration mit dem Smarthome-System erfolgt via ESPHome. Weitere Informationen siehe: <a href="https://www.neoe.io/1086">www.neoe.io/1086</a>
 
 # Installation
 
